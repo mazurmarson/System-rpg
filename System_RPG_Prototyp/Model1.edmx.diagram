@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="af82043b06be4804872980085b09abd8" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="RpgSystemModel.DZIALANIE" PointX="5.25" PointY="7.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RpgSystemModel.FUNKCJA" PointX="3" PointY="8.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RpgSystemModel.ITEM" PointX="3" PointY="4.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RpgSystemModel.KATEGORIA" PointX="0.75" PointY="1.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RpgSystemModel.KLASA" PointX="7.75" PointY="5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RpgSystemModel.OCENA" PointX="5.25" PointY="1.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RpgSystemModel.POSTAC" PointX="6" PointY="4.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RpgSystemModel.UZYTKOWNIK" PointX="0.75" PointY="4.375" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="RpgSystemModel.FK__DZIALANIE__IDFUN__5EBF139D" />
+        <AssociationConnector ManuallyRouted="false" Association="RpgSystemModel.FK__DZIALANIE__IDITE__5FB337D6" />
+        <AssociationConnector ManuallyRouted="false" Association="RpgSystemModel.FK__ITEM__IDKATEGORI__571DF1D5" />
+        <AssociationConnector ManuallyRouted="false" Association="RpgSystemModel.FK__ITEM__IDUZYTKOWN__5812160E" />
+        <AssociationConnector ManuallyRouted="false" Association="RpgSystemModel.FK__OCENA__IDITEM__6383C8BA" />
+        <AssociationConnector ManuallyRouted="false" Association="RpgSystemModel.FK__POSTAC__IDKLASA__534D60F1" />
+        <AssociationConnector ManuallyRouted="false" Association="RpgSystemModel.FK__OCENA__IDUZYTKOW__628FA481" />
+        <AssociationConnector ManuallyRouted="false" Association="RpgSystemModel.FK__POSTAC__IDUZYTKO__5441852A" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

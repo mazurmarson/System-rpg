@@ -1,0 +1,42 @@
+﻿@model System_RPG_Prototyp.OCENA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OCENA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WARTOSC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WARTOSC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ITEM.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ITEM.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UZYTKOWNIK.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UZYTKOWNIK.NAZWA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDOCENA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

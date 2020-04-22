@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RpgSystemModelStoreContainer" CdmEntityContainer="RpgSystemEntities">
+    <EntitySetMapping Name="DZIALANIE">
+      <EntityTypeMapping TypeName="RpgSystemModel.DZIALANIE">
+        <MappingFragment StoreEntitySet="DZIALANIE">
+          <ScalarProperty Name="IDDZIALANIE" ColumnName="IDDZIALANIE" />
+          <ScalarProperty Name="IDFUNKCJA" ColumnName="IDFUNKCJA" />
+          <ScalarProperty Name="IDITEM" ColumnName="IDITEM" />
+          <ScalarProperty Name="WARTOSC" ColumnName="WARTOSC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FUNKCJA">
+      <EntityTypeMapping TypeName="RpgSystemModel.FUNKCJA">
+        <MappingFragment StoreEntitySet="FUNKCJA">
+          <ScalarProperty Name="IDFUNKCJA" ColumnName="IDFUNKCJA" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEM">
+      <EntityTypeMapping TypeName="RpgSystemModel.ITEM">
+        <MappingFragment StoreEntitySet="ITEM">
+          <ScalarProperty Name="IDITEM" ColumnName="IDITEM" />
+          <ScalarProperty Name="IDKATEGORIA" ColumnName="IDKATEGORIA" />
+          <ScalarProperty Name="IDUZYTKOWNIK" ColumnName="IDUZYTKOWNIK" />
+          <ScalarProperty Name="WAGA" ColumnName="WAGA" />
+          <ScalarProperty Name="DWURECZNOSC" ColumnName="DWURECZNOSC" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KATEGORIA">
+      <EntityTypeMapping TypeName="RpgSystemModel.KATEGORIA">
+        <MappingFragment StoreEntitySet="KATEGORIA">
+          <ScalarProperty Name="IDKATEGORIA" ColumnName="IDKATEGORIA" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KLASA">
+      <EntityTypeMapping TypeName="RpgSystemModel.KLASA">
+        <MappingFragment StoreEntitySet="KLASA">
+          <ScalarProperty Name="IDKLASA" ColumnName="IDKLASA" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="SILA" ColumnName="SILA" />
+          <ScalarProperty Name="WYTRZYMALOSC" ColumnName="WYTRZYMALOSC" />
+          <ScalarProperty Name="UDZWIG" ColumnName="UDZWIG" />
+          <ScalarProperty Name="MANA" ColumnName="MANA" />
+          <ScalarProperty Name="HP" ColumnName="HP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OCENA">
+      <EntityTypeMapping TypeName="RpgSystemModel.OCENA">
+        <MappingFragment StoreEntitySet="OCENA">
+          <ScalarProperty Name="IDOCENA" ColumnName="IDOCENA" />
+          <ScalarProperty Name="IDUZYTKOWNIK" ColumnName="IDUZYTKOWNIK" />
+          <ScalarProperty Name="IDITEM" ColumnName="IDITEM" />
+          <ScalarProperty Name="WARTOSC" ColumnName="WARTOSC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POSTAC">
+      <EntityTypeMapping TypeName="RpgSystemModel.POSTAC">
+        <MappingFragment StoreEntitySet="POSTAC">
+          <ScalarProperty Name="IDPOSTAC" ColumnName="IDPOSTAC" />
+          <ScalarProperty Name="IDKLASA" ColumnName="IDKLASA" />
+          <ScalarProperty Name="IDUZYTKOWNIK" ColumnName="IDUZYTKOWNIK" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UZYTKOWNIK">
+      <EntityTypeMapping TypeName="RpgSystemModel.UZYTKOWNIK">
+        <MappingFragment StoreEntitySet="UZYTKOWNIK">
+          <ScalarProperty Name="IDUZYTKOWNIK" ColumnName="IDUZYTKOWNIK" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

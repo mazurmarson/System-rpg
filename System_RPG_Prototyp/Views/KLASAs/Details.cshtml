@@ -1,0 +1,66 @@
+﻿@model System_RPG_Prototyp.KLASA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KLASA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SILA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SILA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WYTRZYMALOSC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WYTRZYMALOSC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UDZWIG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDZWIG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MANA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDKLASA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

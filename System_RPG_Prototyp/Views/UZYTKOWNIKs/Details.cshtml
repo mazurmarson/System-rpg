@@ -1,0 +1,50 @@
+﻿@model System_RPG_Prototyp.UZYTKOWNIK
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UZYTKOWNIK</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HASLO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HASLO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELEFON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELEFON)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDUZYTKOWNIK }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

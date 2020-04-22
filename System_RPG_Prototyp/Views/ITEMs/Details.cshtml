@@ -1,0 +1,58 @@
+﻿@model System_RPG_Prototyp.ITEM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ITEM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WAGA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WAGA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DWURECZNOSC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DWURECZNOSC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KATEGORIA.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KATEGORIA.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UZYTKOWNIK.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UZYTKOWNIK.NAZWA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDITEM }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

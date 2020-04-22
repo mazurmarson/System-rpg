@@ -1,0 +1,42 @@
+﻿@model System_RPG_Prototyp.DZIALANIE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DZIALANIE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WARTOSC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WARTOSC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FUNKCJA.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FUNKCJA.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ITEM.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ITEM.NAZWA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDDZIALANIE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

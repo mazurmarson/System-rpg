@@ -1,0 +1,42 @@
+﻿@model System_RPG_Prototyp.POSTAC
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>POSTAC</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KLASA.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KLASA.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UZYTKOWNIK.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UZYTKOWNIK.NAZWA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDPOSTAC }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

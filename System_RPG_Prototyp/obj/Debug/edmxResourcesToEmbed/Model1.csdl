@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RpgSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DZIALANIE">
+    <Key>
+      <PropertyRef Name="IDDZIALANIE" />
+    </Key>
+    <Property Name="IDDZIALANIE" Type="Int32" Nullable="false" />
+    <Property Name="IDFUNKCJA" Type="Int16" Nullable="false" />
+    <Property Name="IDITEM" Type="Int32" Nullable="false" />
+    <Property Name="WARTOSC" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="FUNKCJA" Relationship="Self.FK__DZIALANIE__IDFUN__5EBF139D" FromRole="DZIALANIE" ToRole="FUNKCJA" />
+    <NavigationProperty Name="ITEM" Relationship="Self.FK__DZIALANIE__IDITE__5FB337D6" FromRole="DZIALANIE" ToRole="ITEM" />
+  </EntityType>
+  <EntityType Name="FUNKCJA">
+    <Key>
+      <PropertyRef Name="IDFUNKCJA" />
+    </Key>
+    <Property Name="IDFUNKCJA" Type="Int16" Nullable="false" />
+    <Property Name="NAZWA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DZIALANIE" Relationship="Self.FK__DZIALANIE__IDFUN__5EBF139D" FromRole="FUNKCJA" ToRole="DZIALANIE" />
+  </EntityType>
+  <EntityType Name="ITEM">
+    <Key>
+      <PropertyRef Name="IDITEM" />
+    </Key>
+    <Property Name="IDITEM" Type="Int32" Nullable="false" />
+    <Property Name="IDKATEGORIA" Type="Int16" Nullable="false" />
+    <Property Name="IDUZYTKOWNIK" Type="Int32" Nullable="false" />
+    <Property Name="WAGA" Type="Byte" Nullable="false" />
+    <Property Name="DWURECZNOSC" Type="Boolean" Nullable="false" />
+    <Property Name="NAZWA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DZIALANIE" Relationship="Self.FK__DZIALANIE__IDITE__5FB337D6" FromRole="ITEM" ToRole="DZIALANIE" />
+    <NavigationProperty Name="KATEGORIA" Relationship="Self.FK__ITEM__IDKATEGORI__571DF1D5" FromRole="ITEM" ToRole="KATEGORIA" />
+    <NavigationProperty Name="UZYTKOWNIK" Relationship="Self.FK__ITEM__IDUZYTKOWN__5812160E" FromRole="ITEM" ToRole="UZYTKOWNIK" />
+    <NavigationProperty Name="OCENA" Relationship="Self.FK__OCENA__IDITEM__6383C8BA" FromRole="ITEM" ToRole="OCENA" />
+  </EntityType>
+  <EntityType Name="KATEGORIA">
+    <Key>
+      <PropertyRef Name="IDKATEGORIA" />
+    </Key>
+    <Property Name="IDKATEGORIA" Type="Int16" Nullable="false" />
+    <Property Name="NAZWA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ITEM" Relationship="Self.FK__ITEM__IDKATEGORI__571DF1D5" FromRole="KATEGORIA" ToRole="ITEM" />
+  </EntityType>
+  <EntityType Name="KLASA">
+    <Key>
+      <PropertyRef Name="IDKLASA" />
+    </Key>
+    <Property Name="IDKLASA" Type="Int32" Nullable="false" />
+    <Property Name="NAZWA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SILA" Type="Byte" Nullable="false" />
+    <Property Name="WYTRZYMALOSC" Type="Byte" Nullable="false" />
+    <Property Name="UDZWIG" Type="Byte" Nullable="false" />
+    <Property Name="MANA" Type="Byte" Nullable="false" />
+    <Property Name="HP" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="POSTAC" Relationship="Self.FK__POSTAC__IDKLASA__534D60F1" FromRole="KLASA" ToRole="POSTAC" />
+  </EntityType>
+  <EntityType Name="OCENA">
+    <Key>
+      <PropertyRef Name="IDOCENA" />
+    </Key>
+    <Property Name="IDOCENA" Type="Int64" Nullable="false" />
+    <Property Name="IDUZYTKOWNIK" Type="Int32" Nullable="false" />
+    <Property Name="IDITEM" Type="Int32" Nullable="false" />
+    <Property Name="WARTOSC" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="ITEM" Relationship="Self.FK__OCENA__IDITEM__6383C8BA" FromRole="OCENA" ToRole="ITEM" />
+    <NavigationProperty Name="UZYTKOWNIK" Relationship="Self.FK__OCENA__IDUZYTKOW__628FA481" FromRole="OCENA" ToRole="UZYTKOWNIK" />
+  </EntityType>
+  <EntityType Name="POSTAC">
+    <Key>
+      <PropertyRef Name="IDPOSTAC" />
+    </Key>
+    <Property Name="IDPOSTAC" Type="Int32" Nullable="false" />
+    <Property Name="IDKLASA" Type="Int32" Nullable="false" />
+    <Property Name="IDUZYTKOWNIK" Type="Int32" Nullable="false" />
+    <Property Name="NAZWA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="KLASA" Relationship="Self.FK__POSTAC__IDKLASA__534D60F1" FromRole="POSTAC" ToRole="KLASA" />
+    <NavigationProperty Name="UZYTKOWNIK" Relationship="Self.FK__POSTAC__IDUZYTKO__5441852A" FromRole="POSTAC" ToRole="UZYTKOWNIK" />
+  </EntityType>
+  <EntityType Name="UZYTKOWNIK">
+    <Key>
+      <PropertyRef Name="IDUZYTKOWNIK" />
+    </Key>
+    <Property Name="IDUZYTKOWNIK" Type="Int32" Nullable="false" />
+    <Property Name="NAZWA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HASLO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TELEFON" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ITEM" Relationship="Self.FK__ITEM__IDUZYTKOWN__5812160E" FromRole="UZYTKOWNIK" ToRole="ITEM" />
+    <NavigationProperty Name="OCENA" Relationship="Self.FK__OCENA__IDUZYTKOW__628FA481" FromRole="UZYTKOWNIK" ToRole="OCENA" />
+    <NavigationProperty Name="POSTAC" Relationship="Self.FK__POSTAC__IDUZYTKO__5441852A" FromRole="UZYTKOWNIK" ToRole="POSTAC" />
+  </EntityType>
+  <Association Name="FK__DZIALANIE__IDFUN__5EBF139D">
+    <End Role="FUNKCJA" Type="Self.FUNKCJA" Multiplicity="1" />
+    <End Role="DZIALANIE" Type="Self.DZIALANIE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FUNKCJA">
+        <PropertyRef Name="IDFUNKCJA" />
+      </Principal>
+      <Dependent Role="DZIALANIE">
+        <PropertyRef Name="IDFUNKCJA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DZIALANIE__IDITE__5FB337D6">
+    <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+    <End Role="DZIALANIE" Type="Self.DZIALANIE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ITEM">
+        <PropertyRef Name="IDITEM" />
+      </Principal>
+      <Dependent Role="DZIALANIE">
+        <PropertyRef Name="IDITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ITEM__IDKATEGORI__571DF1D5">
+    <End Role="KATEGORIA" Type="Self.KATEGORIA" Multiplicity="1" />
+    <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KATEGORIA">
+        <PropertyRef Name="IDKATEGORIA" />
+      </Principal>
+      <Dependent Role="ITEM">
+        <PropertyRef Name="IDKATEGORIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ITEM__IDUZYTKOWN__5812160E">
+    <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="1" />
+    <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UZYTKOWNIK">
+        <PropertyRef Name="IDUZYTKOWNIK" />
+      </Principal>
+      <Dependent Role="ITEM">
+        <PropertyRef Name="IDUZYTKOWNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OCENA__IDITEM__6383C8BA">
+    <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+    <End Role="OCENA" Type="Self.OCENA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ITEM">
+        <PropertyRef Name="IDITEM" />
+      </Principal>
+      <Dependent Role="OCENA">
+        <PropertyRef Name="IDITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__POSTAC__IDKLASA__534D60F1">
+    <End Role="KLASA" Type="Self.KLASA" Multiplicity="1" />
+    <End Role="POSTAC" Type="Self.POSTAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KLASA">
+        <PropertyRef Name="IDKLASA" />
+      </Principal>
+      <Dependent Role="POSTAC">
+        <PropertyRef Name="IDKLASA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OCENA__IDUZYTKOW__628FA481">
+    <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="1" />
+    <End Role="OCENA" Type="Self.OCENA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UZYTKOWNIK">
+        <PropertyRef Name="IDUZYTKOWNIK" />
+      </Principal>
+      <Dependent Role="OCENA">
+        <PropertyRef Name="IDUZYTKOWNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__POSTAC__IDUZYTKO__5441852A">
+    <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="1" />
+    <End Role="POSTAC" Type="Self.POSTAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UZYTKOWNIK">
+        <PropertyRef Name="IDUZYTKOWNIK" />
+      </Principal>
+      <Dependent Role="POSTAC">
+        <PropertyRef Name="IDUZYTKOWNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RpgSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DZIALANIE" EntityType="Self.DZIALANIE" />
+    <EntitySet Name="FUNKCJA" EntityType="Self.FUNKCJA" />
+    <EntitySet Name="ITEM" EntityType="Self.ITEM" />
+    <EntitySet Name="KATEGORIA" EntityType="Self.KATEGORIA" />
+    <EntitySet Name="KLASA" EntityType="Self.KLASA" />
+    <EntitySet Name="OCENA" EntityType="Self.OCENA" />
+    <EntitySet Name="POSTAC" EntityType="Self.POSTAC" />
+    <EntitySet Name="UZYTKOWNIK" EntityType="Self.UZYTKOWNIK" />
+    <AssociationSet Name="FK__DZIALANIE__IDFUN__5EBF139D" Association="Self.FK__DZIALANIE__IDFUN__5EBF139D">
+      <End Role="FUNKCJA" EntitySet="FUNKCJA" />
+      <End Role="DZIALANIE" EntitySet="DZIALANIE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DZIALANIE__IDITE__5FB337D6" Association="Self.FK__DZIALANIE__IDITE__5FB337D6">
+      <End Role="ITEM" EntitySet="ITEM" />
+      <End Role="DZIALANIE" EntitySet="DZIALANIE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ITEM__IDKATEGORI__571DF1D5" Association="Self.FK__ITEM__IDKATEGORI__571DF1D5">
+      <End Role="KATEGORIA" EntitySet="KATEGORIA" />
+      <End Role="ITEM" EntitySet="ITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ITEM__IDUZYTKOWN__5812160E" Association="Self.FK__ITEM__IDUZYTKOWN__5812160E">
+      <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+      <End Role="ITEM" EntitySet="ITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OCENA__IDITEM__6383C8BA" Association="Self.FK__OCENA__IDITEM__6383C8BA">
+      <End Role="ITEM" EntitySet="ITEM" />
+      <End Role="OCENA" EntitySet="OCENA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__POSTAC__IDKLASA__534D60F1" Association="Self.FK__POSTAC__IDKLASA__534D60F1">
+      <End Role="KLASA" EntitySet="KLASA" />
+      <End Role="POSTAC" EntitySet="POSTAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OCENA__IDUZYTKOW__628FA481" Association="Self.FK__OCENA__IDUZYTKOW__628FA481">
+      <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+      <End Role="OCENA" EntitySet="OCENA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__POSTAC__IDUZYTKO__5441852A" Association="Self.FK__POSTAC__IDUZYTKO__5441852A">
+      <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+      <End Role="POSTAC" EntitySet="POSTAC" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

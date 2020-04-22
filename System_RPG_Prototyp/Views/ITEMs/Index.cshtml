@@ -1,0 +1,57 @@
+﻿@model IEnumerable<System_RPG_Prototyp.ITEM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WAGA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DWURECZNOSC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAZWA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KATEGORIA.NAZWA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UZYTKOWNIK.NAZWA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WAGA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DWURECZNOSC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAZWA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KATEGORIA.NAZWA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UZYTKOWNIK.NAZWA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDITEM }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDITEM }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDITEM })
+        </td>
+    </tr>
+}
+
+</table>
